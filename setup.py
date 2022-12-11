@@ -74,7 +74,12 @@ setup(
     python_requires=required_python_version,
     include_package_data=True,
     package_data={"": ["README.*", "LICENSE", "requirements.txt"]},
-    classifiers=classifiers
+    classifiers=classifiers,
+    entry_points={
+        'console_scripts': [
+            "aoc2022=aoc2022.__main__:main"
+        ]
+    }
 )
 
 if version == "local":
