@@ -14,6 +14,9 @@ def main():
     day = SUPPORTED_DAYS[args.day]
     mod = importlib.import_module(f"aoc2022.days.{day}")
     input_file = Path.cwd().joinpath(f"inputs", f"{day}_input.txt")
+    if not input_file.is_file():
+        print(f"Could not find input_file: {input_file} for day{args.day}.")
+        sys.exit(0)
     mod.puzzle_one(input_file=input_file)
     mod.puzzle_two(input_file=input_file)
 
