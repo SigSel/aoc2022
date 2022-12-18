@@ -4,5 +4,6 @@ SUPPORTED_DAYS = {
     "3": "day3",
     "4": "day4",
     "5": "day5",
-    "6": "day6"
+    "6": "day6",
+    "8": "day8"
 }
