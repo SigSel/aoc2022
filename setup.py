@@ -21,7 +21,7 @@ email = ""
 # Required version of Python, and classifiers
 required_python_version = ">=3.8.0"
 classifiers = [
-    "Development Status :: 1 - Planning",
+    "Development Status :: 2 - Pre-Alpha",
     "Intended Audience :: Developers",
     "Natural Language :: English",
     "Operating System :: OS Independent",
