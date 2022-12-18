@@ -17,7 +17,9 @@ def main():
     if not input_file.is_file():
         print(f"Could not find input_file: {input_file} for day{args.day}.")
         sys.exit(0)
+    print(f"Solution for the first puzzle of day {args.day}: ")
     mod.puzzle_one(input_file=input_file)
+    print(f"Solution for the second puzzle of day {args.day}: ")
     mod.puzzle_two(input_file=input_file)
 
 
