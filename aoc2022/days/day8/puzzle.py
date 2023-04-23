@@ -1,22 +1,17 @@
-from aoc2022.common import read_file
+from aoc2022.common import BaseDay
 from pathlib import Path
-from typing import Optional
 
 from aoc2022.days.day8 import find_visible, find_best_view
 
 
-def puzzle_one(input_file: Optional[Path] = None) -> None:
-    lines = read_file(Path("day8_input.txt") if input_file is None else input_file)
-    visible_trees = find_visible(lines)
-    print(visible_trees)
+class DayEight(BaseDay):
+    def __init__(self, input_puzzle_file: Path):
+        super().__init__(input_puzzle_file)
 
+    def solve_puzzle_one(self) -> int:
+        visible_trees = find_visible(self.lines)
+        return visible_trees
 
-def puzzle_two(input_file: Optional[Path] = None) -> None:
-    lines = read_file(Path("day8_input.txt") if input_file is None else input_file)
-    best_view = find_best_view(lines)
-    print(best_view)
-
-
-if __name__ == "__main__":
-    puzzle_one()
-    puzzle_two()
+    def solve_puzzle_two(self) -> int:
+        best_view = find_best_view(self.lines)
+        return best_view

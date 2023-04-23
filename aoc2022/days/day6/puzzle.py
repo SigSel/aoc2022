@@ -1,22 +1,17 @@
-from aoc2022.common import read_file
+from aoc2022.common import BaseDay
 from pathlib import Path
-from typing import Optional
 
 from aoc2022.days.day6 import find_start_of_packet, find_start_of_message
 
 
-def puzzle_one(input_file: Optional[Path] = None) -> None:
-    lines = read_file(Path("day6_input.txt") if input_file is None else input_file)
-    start = find_start_of_packet(lines[0])
-    print(start)
+class DaySix(BaseDay):
+    def __init__(self, input_puzzle_file: Path):
+        super().__init__(input_puzzle_file)
 
+    def solve_puzzle_one(self) -> int:
+        start = find_start_of_packet(self.lines[0])
+        return start
 
-def puzzle_two(input_file: Optional[Path] = None) -> None:
-    lines = read_file(Path("day6_input.txt") if input_file is None else input_file)
-    start = find_start_of_message(lines[0])
-    print(start)
-
-
-if __name__ == "__main__":
-    puzzle_one()
-    puzzle_two()
+    def solve_puzzle_two(self) -> int:
+        start = find_start_of_message(self.lines[0])
+        return start
