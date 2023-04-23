@@ -1,22 +1,17 @@
-from aoc2022.common import read_file
+from aoc2022.common import BaseDay
 from pathlib import Path
-from typing import Optional
 
 from aoc2022.days.day2 import calculate_score, score_with_best_move
 
 
-def puzzle_one(input_file: Optional[Path] = None) -> None:
-    lines = read_file(Path("day2_input.txt") if input_file is None else input_file)
-    score = sum([calculate_score(line.split(" ")[0], line.split(" ")[1]) for line in lines])
-    print(score)
+class DayTwo(BaseDay):
+    def __init__(self, input_puzzle_file: Path):
+        super().__init__(input_puzzle_file)
 
+    def solve_puzzle_one(self) -> int:
+        score = sum([calculate_score(line.split(" ")[0], line.split(" ")[1]) for line in self.lines])
+        return score
 
-def puzzle_two(input_file: Optional[Path] = None) -> None:
-    lines = read_file(Path("day2_input.txt") if input_file is None else input_file)
-    score = sum([score_with_best_move(line.split(" ")[0], line.split(" ")[1]) for line in lines])
-    print(score)
-
-
-if __name__ == "__main__":
-    puzzle_one()
-    puzzle_two()
+    def solve_puzzle_two(self) -> int:
+        score = sum([score_with_best_move(line.split(" ")[0], line.split(" ")[1]) for line in self.lines])
+        return score
