@@ -3,6 +3,9 @@ import pathlib
 
 from setuptools import setup, find_packages
 
+# Package verison
+version = "0.8.0"
+
 # The name of the package, and a short 1-line description.
 package_name = "aoc2022"
 description = "Advent of Code 2022"
@@ -19,7 +22,7 @@ maintainer = "Sigvard Johansen Seljelv"
 email = ""
 
 # Required version of Python, and classifiers
-required_python_version = ">=3.8.0"
+required_python_version = ">=3.10.0"
 classifiers = [
     "Development Status :: 2 - Pre-Alpha",
     "Intended Audience :: Developers",
@@ -33,12 +36,6 @@ extras_requirements = {
     "dev": []
 }
 
-if os.environ.get("CI") and os.environ.get("CI_COMMIT_TAG"):
-    version = os.environ.get("CI_COMMIT_TAG")
-    from packaging.version import Version as PEP440Version  # Only import packaging in the pipeline
-    PEP440Version(version)  # Raises packaging.version.InvalidVersion if not a valid version.
-else:
-    version = "local"
 url = os.environ.get("CI_PROJECT_URL", "")
 
 readme = None
@@ -79,7 +76,3 @@ setup(
         ]
     }
 )
-
-if version == "local":
-    print("\n\n !!!!")
-    print("A PACKAGE WAS BUILT WITH VERSION 'local'")
