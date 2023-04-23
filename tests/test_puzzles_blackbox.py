@@ -6,8 +6,7 @@ from aoc2022.days.day_fetcher import get_day
 
 
 def get_input_path(day_number: int) -> Path:
-    parent_dir = Path.cwd().parent
-    absolute_path = parent_dir.joinpath(f"inputs", f"day{day_number}_input.txt")
+    absolute_path = Path.cwd().joinpath(f"inputs", f"day{day_number}_input.txt")
     if not absolute_path.exists():
         print(absolute_path.absolute())
         raise FileNotFoundError
