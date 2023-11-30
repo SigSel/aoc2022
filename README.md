@@ -33,6 +33,7 @@ To do so you need exectue the following steps:
 
 4. Install the package in developer mode. Note: You have to be in the same folder as the setup.py file
 * ```pip install -e .```
+* or ```pip install -e .[dev]``` to install in developer mode
 
 Then you are free to make changes and use the package!<br>
 When you are finished with what you want to do you can deactivate the virtual environment using
