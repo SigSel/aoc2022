@@ -26,9 +26,9 @@ def get_input_path(day_number: int) -> Path:
     ]
 )
 def test_all_days_blackbox(
-        day: int,
-        expected_solution_one: Union[int, str],
-        expected_solution_two: Union[int, str]
+    day: int,
+    expected_solution_one: Union[int, str],
+    expected_solution_two: Union[int, str],
 ) -> None:
     input_path = get_input_path(day)
     current_day = get_day(day_number=day, input_puzzle_file=input_path)

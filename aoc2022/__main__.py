@@ -13,7 +13,9 @@ def main():
         sys.exit(0)
     try:
         day = get_day(day_number=int(args.day), input_puzzle_file=input_file)
+        print(f"Solution for the first puzzle of day {args.day}:")
         print(day.solve_puzzle_one())
+        print(f"Solution for the second puzzle of day {args.day}:")
         print(day.solve_puzzle_two())
     except NotImplementedError:
         print(f"Day {args.day} is not implemented.")
